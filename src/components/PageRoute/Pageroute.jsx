@@ -1,14 +1,14 @@
 import React from 'react'
-import {BrowseRouter as Router, Routes, Route } from 'react-router-dom'
+import {Routes, Route } from 'react-router-dom'
 import Dashboard from '../../pages/Dashboard'
+import AuthorisedBusiness from '../../pages/AuthorisedBusiness'
 
 const Pageroute = () => {
   return (
-    <Router>
       <Routes>
         <Route path='/' element={<Dashboard/>}/>
+        <Route path='authorised' element={<AuthorisedBusiness/>}/>
       </Routes>
-    </Router>
   )
 }
 

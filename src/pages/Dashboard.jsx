@@ -1,10 +1,16 @@
-import React from 'react'
+import { Table } from "antd"
+import { TableData } from "../utils/TableData"
+const {Column} = Table
 
 const Dashboard = () => {
   return (
-    <div>
-      
-    </div>
+    <Table>
+        {
+            TableData.map((item) => (
+                <Column title={item.title}  key={item.id}/>
+            ))
+        }
+    </Table>
   )
 }
 

@@ -11,10 +11,12 @@ import {
   FilterOutlined,
   BellOutlined,
   ClockCircleOutlined,
+  DashOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
 import Logo from "./Logo";
 import RouterContainer from "../RouterContainer/RouterContainer";
+import Dashboard from "../../pages/Dashboard";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -119,7 +121,7 @@ const Navbar = () => {
               <h1 className="font-bold text-lg p-4 ml-6">
                 Authorised Businesses
               </h1>
-              <div className="flex relative bottom-6 gap-4 left-10">
+              <div className="flex relative bottom-6 gap-4 pl-10">
                 <p className="underline text-green-500">
                   <a href="#" className="hover:text-green-500">
                     Authorised
@@ -160,7 +162,7 @@ const Navbar = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            
+            <RouterContainer/>
           </div>
         </Content>
         <Footer>
