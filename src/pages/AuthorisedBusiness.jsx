@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Table, Tag } from "antd";
+import UserData from "../components/Userdata/UserData";
 const { Column } = Table;
 const data = [
   {
@@ -83,17 +84,24 @@ const data = [
     sent: "Brooklyn Simmons",
   },
 ];
-const AuthorisedBusiness = () => (
 
+const AuthorisedBusiness = () => {
 
-  
-  <Table dataSource={data} pagination={false}>
+const [selectedUser, setSelectedUser] = useState(false)
+
+const handleView = () => {
+  setSelectedUser(true)
+}
+
+  return (
+    <>
+     <Table dataSource={data} pagination={false}>
     <Column title="Business name" dataIndex="name" key="name" />
     <Column title="Business PAN" dataIndex="Pan" key="Pan" />
     <Column title="Email" dataIndex="Email" key="Email" />
-    <Column title="Connection" dataIndex="connection" key="connection" />
+    
     <Column
-      title="Connection"
+      title="Connection Type"
       dataIndex="connection"
       key="connection"
       render={(tags) => (
@@ -112,11 +120,17 @@ const AuthorisedBusiness = () => (
         </>
       )}
     />
+    <Column title="Authorised By" dataIndex="sent" key="sent" />
     <Column
       title="Action"
       key="action"
-      render={() => <a className="text-blue-500">view</a>}
+      render={() => <a className="text-blue-500" onClick={handleView}>view</a>}
     />
   </Table>
-);
+      {
+        selectedUser && <UserData/>
+      }
+    </>
+  )
+}
 export default AuthorisedBusiness;

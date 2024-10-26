@@ -17,6 +17,8 @@ import { Layout, Menu, theme } from "antd";
 import Logo from "./Logo";
 import RouterContainer from "../RouterContainer/RouterContainer";
 import Dashboard from "../../pages/Dashboard";
+import Pagination from "../Pagination";
+import Page from "../Pagination";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -166,6 +168,7 @@ const Navbar = () => {
           </div>
         </Content>
         <Footer>
+          <Page/>
         </Footer>
       </Layout>
     </Layout>

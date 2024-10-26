@@ -1,17 +1,36 @@
-import { Table } from "antd"
-import { TableData } from "../utils/TableData"
-const {Column} = Table
+import React from 'react';
+import { Table } from 'antd';
+const columns = [
+  {
+    title: 'Business name',
+  },
+  {
+    title: 'Business PAN',
+  },
+  {
+    title: 'Email',
+  },
+  {
+    title: 'Connection Type',
+  },
+  {
+    title: 'Authorised By',
+  },
+  {
+    title: 'Action 3',
+    fixed: 'right',
+    width: 90,
+    render: () => <a>Action</a>,
+  },
+];
 
-const Dashboard = () => {
+const App = () => {
   return (
-    <Table>
-        {
-            TableData.map((item) => (
-                <Column title={item.title}  key={item.id}/>
-            ))
-        }
-    </Table>
-  )
-}
-
-export default Dashboard
+    <Table
+      bordered
+      columns={columns}
+      pagination={false}
+    />
+  );
+};
+export default App;
