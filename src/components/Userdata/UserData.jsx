@@ -1,5 +1,5 @@
 import { Drawer } from "antd";
-import React, { useState } from "react";
+import React, {useState } from "react";
 
 import { LinkOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom"; 
@@ -11,7 +11,7 @@ const UserData = () => {
 
   const openModel = () => {
     setOpenRequestConnectionModel(true)
-  }
+  }  
 
   const onClose = () => {
     setOpen(false);
@@ -81,26 +81,26 @@ const UserData = () => {
                     </p>
                   </li>
                   <li className="flex gap-2">
-                    <input type="checkbox" checked />
+                    <input type="checkbox" defaultChecked={true}  />
                     <p>Importer Exporter Codes (IECs)</p>
                   </li>
                   <li className="flex gap-2">
-                    <input type="checkbox" checked />
+                    <input type="checkbox" defaultChecked={true}  />
                     <p>EPF UAN(s) with Compliance History</p>
                   </li>
                   <li className="flex gap-2">
-                    <input type="checkbox" checked />
+                    <input type="checkbox" defaultChecked={true}  />
                     <p>Constitution Documents (MoA, AoA)</p>
                   </li>
                   <li className="flex gap-2">
-                    <input type="checkbox" checked />
+                    <input type="checkbox" defaultChecked={true}  />
                     <p>Key Management Personnel & Owners Information</p>
                   </li>
                   <li className="flex gap-2 text-gray-400">
                     -<p>Group Companies/LLP’s, List of Charges</p>
                   </li>
                   <li className="flex gap-2">
-                    <input type="checkbox" checked />
+                    <input type="checkbox" defaultChecked={true} />
                     <p>Financial Statements</p>
                   </li>
                 </ul>

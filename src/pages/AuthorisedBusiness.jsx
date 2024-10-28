@@ -95,7 +95,9 @@ const handleView = () => {
 
   return (
     <>
-     <Table dataSource={data} pagination={false}>
+     <Table dataSource={data} pagination={false}  scroll={{
+        x: 'max-content',
+      }}>
     <Column title="Business name" dataIndex="name" key="name" />
     <Column title="Business PAN" dataIndex="Pan" key="Pan" />
     <Column title="Email" dataIndex="Email" key="Email" />
@@ -124,6 +126,7 @@ const handleView = () => {
     <Column
       title="Action"
       key="action"
+      fixed='right'
       render={() => <a className="text-blue-500" onClick={handleView}>view</a>}
     />
   </Table>
