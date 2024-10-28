@@ -11,15 +11,12 @@ import {
   FilterOutlined,
   BellOutlined,
   ClockCircleOutlined,
-  DashOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
 import Logo from "./Logo";
 import RouterContainer from "../RouterContainer/RouterContainer";
-import Dashboard from "../../pages/Dashboard";
-import Pagination from "../Pagination";
 import Page from "../Pagination";
-
+import "../../App.css";
 const { Header, Content, Footer, Sider } = Layout;
 
 const Navbar = () => {
@@ -54,6 +51,7 @@ const Navbar = () => {
         </div>
         <div className="demo-logo-vertical" />
         <Menu
+          type="success"
           className="relative hover:text-green-500"
           onClick={(item) => {
             navigate(item.key);
@@ -135,7 +133,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-         </Header>
+        </Header>
         <Content
           style={{
             margin: "0 16px",
@@ -164,11 +162,11 @@ const Navbar = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            <RouterContainer/>
+            <RouterContainer />
           </div>
         </Content>
         <Footer>
-          <Page/>
+          <Page />
         </Footer>
       </Layout>
     </Layout>

@@ -1,4 +1,4 @@
-import {Divider, Modal, Steps, message } from "antd";
+import { Divider, Modal, Steps } from "antd";
 import { useState } from "react";
 import ConnectionDetails from "./ConnectionDetails";
 import DataAccess from "./DataAccess";
@@ -19,24 +19,27 @@ const RequestConnection = () => {
   const onDataAccess = (values) => {
     setData(values);
     setCurrent(2);
-    message.success("Your data has been submitted successfully!");
   };
+
+  const Close = () => {
+    setIsOpen(false)
+  }
 
   const progressPercent = (current + 1) * 50;
 
   return (
     <div>
-      <Modal title="Connection Type" current={setCurrent} open={isOpen} onCancel={() => setIsOpen(false)} footer={null}>
+      <Modal title="Connection Type" open={isOpen} onCancel={Close} footer={null}>
         <Divider />
-        <Steps current={current} percent={progressPercent} style={{ color: "green" }}>
-          <Step title="Connection" />
+        <Steps current={current} percent={progressPercent}>
+          <Step title="Connection"/>
           <Step title="Data" />
         </Steps>
         {current === 0 && (
-          <ConnectionDetails onFinish={onCompleteConnection} initialValues={formDetails} />
+          <ConnectionDetails onFinish={onCompleteConnection} initialValues={formDetails} Close={Close}/>
         )}
         {current === 1 && (
-          <DataAccess onFinish={onDataAccess} initialValues={dataItem} />
+          <DataAccess onFinish={onDataAccess} initialValues={dataItem} Close={Close}/>
         )}
       </Modal>
     </div>

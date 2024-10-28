@@ -1,10 +1,11 @@
 
-import {Checkbox ,Card } from "antd";
+import {Checkbox ,Card, Button } from "antd";
 import { PlusOutlined} from '@ant-design/icons';
+import { useState } from "react";
 
-const DataAccess = ({ onFinish, initialValues }) => {
+const DataAccess = ({ onFinish, initialValues, Close}) => {
   return (
-    <div className="w-full pt-6" onFinish={onFinish} initialValues={initialValues}>
+    <div className={`w-full pt-6`} onFinish={onFinish} initialValues={initialValues}>
     <Card
       type="inner"
       title="REQUEST DATA TO"
@@ -94,7 +95,10 @@ const DataAccess = ({ onFinish, initialValues }) => {
           </li>
         </ul>
       </div>
-      
+      <div className="flex justify-end gap-2">
+        <Button className="hover:text-black" onClick={Close}>cancel</Button>
+        <Button type="success" className="bg-green-500 text-white">Submit</Button>
+      </div>
   </div>
   );
 };
