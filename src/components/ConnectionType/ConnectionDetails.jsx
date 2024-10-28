@@ -1,10 +1,10 @@
 import { Button, Divider, Form} from "antd"
 
-const ConnectionDetails = ({ onFinish, initialValues, onclose }) => {
+const ConnectionDetails = ({ onFinish, initialValues, current }) => {
   return (
     <div>
       <div>
-        <h1>REQUEST CONNECTION TO</h1>
+        <h1 className="pt-4">REQUEST CONNECTION TO</h1>
         <Divider/>
         <Form   onFinish={onFinish}
                 initialValues={initialValues}
@@ -91,7 +91,7 @@ const ConnectionDetails = ({ onFinish, initialValues, onclose }) => {
       </div>
       <div className="flex justify-end gap-2">
         <Button>cancel</Button>
-        <Button className="bg-green-500 hover:bg-green-400">Next</Button>
+        <Button onClick={current} className="bg-green-500 hover:bg-green-400">Next</Button>
       </div>
     </div>
   )
