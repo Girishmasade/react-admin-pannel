@@ -89,10 +89,6 @@ const AuthorisedBusiness = () => {
 
 const [selectedUser, setSelectedUser] = useState(false)
 
-const handleView = () => {
-  setSelectedUser(true)
-}
-
   return (
     <>
      <Table dataSource={data} pagination={false}  scroll={{
@@ -127,11 +123,11 @@ const handleView = () => {
       title="Action"
       key="action"
       fixed='right'
-      render={() => <a className="text-blue-500" onClick={handleView}>view</a>}
+      render={() => <a className="text-blue-500" onClick={() => setSelectedUser(!selectedUser)}>view</a>}
     />
   </Table>
       {
-        selectedUser && <UserData/>
+        selectedUser && (<UserData/>)
       }
     </>
   )

@@ -9,10 +9,6 @@ const UserData = () => {
   const [open, setOpen] = useState(true);
   const [openRequestConnectionModel, setOpenRequestConnectionModel] = useState(false)
 
-  const openModel = () => {
-    setOpenRequestConnectionModel(true)
-  }  
-  
   return (
     <div>
       <Drawer 
@@ -125,7 +121,7 @@ const UserData = () => {
               </div>
             </div>
             <div className="pt-5 text-end text-sm">
-              <Link onClick={openModel} className="text-blue-500">
+              <Link onClick={() => setOpenRequestConnectionModel(!openRequestConnectionModel)} className="text-blue-500">
                 Request connection
               </Link>
             </div>
