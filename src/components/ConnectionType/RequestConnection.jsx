@@ -2,6 +2,7 @@ import { Divider, Modal, Steps } from "antd";
 import { useState } from "react";
 import ConnectionDetails from "./ConnectionDetails";
 import DataAccess from "./DataAccess";
+import '../../App.css'
 
 const { Step } = Steps;
 
@@ -31,9 +32,9 @@ const RequestConnection = () => {
     <div>
       <Modal title="Connection Type" open={isOpen} onCancel={Close} footer={null}>
         <Divider />
-        <Steps current={current} percent={progressPercent}>
-          <Step title="Connection"/>
-          <Step title="Data" />
+        <Steps current={current} percent={progressPercent} className="custom-steps">
+          <Step title="Connection" className="custom-steps"/>
+          <Step title="Data" className="custom-steps"/>
         </Steps>
         {current === 0 && (
           <ConnectionDetails onFinish={onCompleteConnection} initialValues={formDetails} Close={Close}/>

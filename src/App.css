@@ -1,3 +1,39 @@
 .custom-navbar {
   background-color: green !important;
 }
+
+.checkbox-checked .ant-checkbox-inner {
+  background-color: green !important;
+  border-color: green !important;
+}
+
+.checkbox-checked .ant-checkbox-checked::after {
+  border-color: green !important;
+}
+
+
+.custom-steps .ant-steps-item-process .ant-steps-item-icon {
+  background-color: rgb(33, 177, 14) !important;
+  border-color: rgb(33, 177, 14) !important;
+  color: white !important;
+}
+
+.custom-steps .ant-steps-item-finish .ant-steps-item-icon {
+  background-color: rgb(33, 177, 14) !important;
+  border-color: rgb(33, 177, 14) !important;
+  color: white !important;
+}
+
+.custom-steps .ant-steps-item-wait .ant-steps-item-icon {
+  background-color: rgb(33, 177, 14) !important;
+  border-color: rgb(33, 177, 14) !important;
+  color: white !important;
+}
+
+.custom-steps .ant-steps-item-finish .ant-steps-item-icon .ant-steps-icon {
+  color: white !important;
+}
+.custom-steps .ant-steps-item-finish .ant-steps-item-icon {
+  background-color: green !important;
+  border-color: green !important;
+}

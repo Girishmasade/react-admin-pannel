@@ -1,12 +1,13 @@
 import { Button, Divider, Form, Input } from "antd";
-import React, { useState } from "react";
 import { Checkbox } from "antd";
 import "../../App.css";
+import { useState } from "react";
 
 const ConnectionDetails = ({ onFinish, initialValues, Close }) => {
-    const onCheckbox = (checkedValues) => {
-        console.log('checked = ', checkedValues);
-      };
+   
+  const [checked, setChecked] = useState(false); 
+  const handleChange = (e) => { setChecked(e.target.checked); };
+
   const plainOptions = ["Vendor", "Client"];
 
   return (
@@ -60,9 +61,10 @@ const ConnectionDetails = ({ onFinish, initialValues, Close }) => {
           <hr />
           <div className="flex pt-2 gap-4 cursor-pointer">
             <Checkbox.Group
+            className={checked ? 'checkbox-checked' : ''}
               options={plainOptions}
               defaultValue={['Vendor']}
-              onChange={onCheckbox}
+              onChange={handleChange}
             />
           </div>
         </div>

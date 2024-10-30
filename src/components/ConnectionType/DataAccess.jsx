@@ -1,9 +1,17 @@
 
-import {Checkbox ,Card, Button } from "antd";
+import { Checkbox ,Card, Button } from "antd";
 import { PlusOutlined} from '@ant-design/icons';
 import { useState } from "react";
+import RequestMessage from "../RequestMessage";
 
 const DataAccess = ({ onFinish, initialValues, Close}) => {
+
+  const [isOpenMessageModel, setIsOpenMessageModel] = useState(false)
+
+  const openMessageModel = () => {
+    setIsOpenMessageModel(true)
+  }
+
   return (
     <div className={`w-full pt-6`} onFinish={onFinish} initialValues={initialValues}>
     <Card
@@ -97,8 +105,11 @@ const DataAccess = ({ onFinish, initialValues, Close}) => {
       </div>
       <div className="flex justify-end gap-2">
         <Button className="hover:text-black" onClick={Close}>cancel</Button>
-        <Button type="success" className="bg-green-500 text-white">Submit</Button>
+        <Button type="success" className="bg-green-500 text-white" onClick={openMessageModel}>Submit</Button>
       </div>
+     {
+      isOpenMessageModel && (<RequestMessage/>)
+     } 
   </div>
   );
 };

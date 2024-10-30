@@ -1,5 +1,5 @@
 import { Drawer } from "antd";
-import React, {useState } from "react";
+import React, { useState } from "react";
 
 import { LinkOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom"; 
@@ -12,16 +12,13 @@ const UserData = () => {
   const openModel = () => {
     setOpenRequestConnectionModel(true)
   }  
-
-  const onClose = () => {
-    setOpen(false);
-  };
+  
   return (
     <div>
       <Drawer 
       title={`Deepesh Khatri and Associates`}
       open={open} 
-      onClose={onClose}
+      onClose={() => setOpen(false)}
       width={400}
       extra ={ 
         <>
